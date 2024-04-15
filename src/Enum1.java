@@ -6,16 +6,16 @@ public class Enum1 {
 //        getSeason();
 //        System.out.println(getSeason());
         switch (getSeason()) {
-            case "Winter":
+            case WINTER:
                 System.out.println("It's Winter now, you need to dress warmly!");
                 break;
-            case "Spring":
+            case SPRING:
                 System.out.println(("It's Spring now, do not forget your hat!"));
                 break;
-            case "Summer":
+            case SUMMER:
                 System.out.println("It's Summer now, and very hot");
                 break;
-            case "Autumn":
+            case AUTUMN:
                 System.out.println("It's Autumn, please put on a warm clothes");
                 break;
             default:
@@ -25,28 +25,28 @@ public class Enum1 {
 
     }
 
-    public static String getSeason() {
+    public static Seasons getSeason() {
         LocalDateTime now = LocalDateTime.now();
         int month = now.getMonthValue();
         switch (month) {
             case 1:
             case 2:
             case 12:
-                return "Winter";
+                return Seasons.WINTER;
             case 3:
             case 4:
             case 5:
-                return "Spring";
+                return Seasons.SPRING;
             case 6:
             case 7:
             case 8:
-                return "Summer";
+                return Seasons.SUMMER;
             case 9:
             case 10:
             case 11:
-                return "Autumn";
+                return Seasons.AUTUMN;
             default:
-                return "Unrecognized season of the year";
+                return Seasons.UNRECOGNIZED;
         }
 
     }
